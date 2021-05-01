@@ -5,7 +5,12 @@ INT_PACKAGES = $(shell find $(INT_DIR) -depth 1)
 PUB_PACKAGES = $(shell find $(PKG_DIR) -depth 1)
 
 .PHONY: all
-all: env dep test
+all: env dep lint test
+
+.PHONY: lint
+lint:
+	golangci-lint run
+	golint ./...
 
 .PHONY: dep
 dep:
