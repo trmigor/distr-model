@@ -5,7 +5,11 @@ INT_PACKAGES = $(shell find $(INT_DIR) -depth 1)
 PUB_PACKAGES = $(shell find $(PKG_DIR) -depth 1)
 
 .PHONY: all
-all: env test
+all: env dep test
+
+.PHONY: dep
+dep:
+	dep ensure
 
 .PHONY: test
 test:
