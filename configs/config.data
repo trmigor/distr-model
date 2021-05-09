@@ -1,0 +1,10 @@
+processes 0 3
+bidirected 1
+link from 0 to 1 latency 1
+link from 0 to 2 latency 1
+link from 0 to 3 latency 1
+link from 1 to 3 latency 1
+link from 2 to 3 latency 1
+setprocesses 0 3 SETX
+send from -1 to 0 SETX_INIT 5
+;wait 60
