@@ -1,0 +1,2 @@
+processes 0 3
+link from all to all latency 1
